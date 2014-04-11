@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 
 /// <summary>
 /// Simply moves the current game object
@@ -21,10 +22,12 @@ public class MoveScript : MonoBehaviour
 
   void Update()
   {
+  		double dirCoefficient = Math.Sqrt(1/(direction.x * direction.x + direction.y * direction.y));
+    	Vector2 newDir = new Vector2((float) (direction.x * dirCoefficient), (float) (direction.y * dirCoefficient));
     // 2 - Movement
     movement = new Vector2(
-      speed.x * direction.x,
-      speed.y * direction.y);
+      speed.x * newDir.x,
+      speed.y * newDir.y);
   }
 
   void FixedUpdate()

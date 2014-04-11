@@ -9,9 +9,10 @@ public class EnemyScript : MonoBehaviour
 	private bool hasSpawn;
 	private MoveScript moveScript;
 	private WeaponScript[] weapons;
-	
+	static int enemyid = 0;
 	void Awake()
 	{
+		enemyid = 0;
 		// Retrieve the weapon only once
 		weapons = GetComponentsInChildren<WeaponScript>();
 
@@ -47,7 +48,7 @@ public class EnemyScript : MonoBehaviour
 				// Auto-fire
 				if (weapon != null && weapon.CanAttack && weapon.enabled) 
 				{
-					weapon.Attack (true);
+					weapon.Attack (true, this.name);
 				}
 			}
 		}
@@ -56,6 +57,8 @@ public class EnemyScript : MonoBehaviour
 	private void Spawn()
 	{
 		hasSpawn = true;
+		
+		this.name = "enemy"+enemyid;
 		
 		// Enable everything
 		// -- Collider

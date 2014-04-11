@@ -45,7 +45,7 @@ public class WeaponScript : MonoBehaviour
   /// <summary>
   /// Create a new projectile if possible
   /// </summary>
-  public void Attack(bool isEnemy)
+  public void Attack(bool isEnemy, string enemyName)
   {
     if (CanAttack)
     {
@@ -66,9 +66,18 @@ public class WeaponScript : MonoBehaviour
 
       // Make the weapon shot always towards it
       MoveScript move = shotTransform.gameObject.GetComponent<MoveScript>();
-      if (move != null)
+      //if (move != null)
+      if(!shot.isEnemyShot)
       {
         move.direction = this.transform.right; // towards in 2D space is the right of the sprite
+      }
+      else
+      {
+      	Transform enemy = GameObject.Find(enemyName).GetComponent<Transform>();
+ 
+			move.direction =  enemy.forward; // Should give you the Vector3 position in the forward direction of the player
+      	
+      	//move.direction = this.transform.direction;
       }
     }
   }
