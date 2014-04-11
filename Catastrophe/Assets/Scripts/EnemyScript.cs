@@ -9,17 +9,11 @@ public class EnemyScript : MonoBehaviour
 	private bool hasSpawn;
 	private MoveScript moveScript;
 	private WeaponScript[] weapons;
-<<<<<<< HEAD
-	static int enemyCount;
-	void Awake()
-	{
-		enemyCount = 0;
-=======
+
 	static int enemyid = 0;
 	void Awake()
 	{
 		enemyid = 0;
->>>>>>> c7f51c5054e2d0a70c6e79f42c350320f2a82088
 		// Retrieve the weapon only once
 		weapons = GetComponentsInChildren<WeaponScript>();
 
@@ -63,7 +57,6 @@ public class EnemyScript : MonoBehaviour
 	// 3 - Activate itself.
 	private void Spawn()
 	{
-		name = "enemy" + enemyCount++;
 		hasSpawn = true;
 		
 		this.name = "enemy"+enemyid;
