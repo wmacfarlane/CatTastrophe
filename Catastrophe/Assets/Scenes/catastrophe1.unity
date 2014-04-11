@@ -197,8 +197,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ac402533e422c46aa3c3be6d528988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 4
+  hp: 9
   isEnemy: 0
+--- !u!1 &159645878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 159645881}
+  - 132: {fileID: 159645880}
+  - 114: {fileID: 159645879}
+  m_Layer: 0
+  m_Name: Lives
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &159645879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 159645878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68b1ab2c0701d204597937bf5b4e9cd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gui: {fileID: 159645880}
+--- !u!132 &159645880
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 159645878}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: 'Lives:'
+  m_Anchor: 0
+  m_Alignment: 0
+  m_PixelOffset: {x: 0, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_PixelCorrect: 1
+  m_RichText: 1
+--- !u!4 &159645881
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 159645878}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .870000005, y: .99000001, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &175767874
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,6 +610,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 882723fce6a2c7e4c8ac46410864eca7, type: 2}
+      propertyPath: hp
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 882723fce6a2c7e4c8ac46410864eca7, type: 2}
   m_RootGameObject: {fileID: 60957581}
@@ -819,7 +886,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1030839420}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62190c71ae2462b43b84a1ff981dace8, type: 3}
+  m_Script: {fileID: 11500000, guid: 12b7d3e135c00aa4fa681941c06ad633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 60957581}
@@ -832,7 +899,7 @@ GUIText:
   m_GameObject: {fileID: 1030839420}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: Score
+  m_Text: 'Score:'
   m_Anchor: 0
   m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
